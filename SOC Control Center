@@ -1,0 +1,59 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { Button, Container, Typography, TextField, Card, CardContent } from "@mui/material";
+
+const LoginPage = () => (
+  <Container maxWidth="sm" style={{ marginTop: "50px", textAlign: "center" }}>
+    <Card>
+      <CardContent>
+        <Typography variant="h5">SOC Control Center Login</Typography>
+        <TextField fullWidth margin="normal" label="Username" variant="outlined" />
+        <TextField fullWidth margin="normal" label="Password" type="password" variant="outlined" />
+        <Button fullWidth variant="contained" color="primary" style={{ marginTop: "10px" }}>Login</Button>
+        <Typography variant="body2" style={{ marginTop: "10px" }}>
+          <Link to="/dashboard">Go to Dashboard</Link>
+        </Typography>
+      </CardContent>
+    </Card>
+  </Container>
+);
+
+const Dashboard = () => (
+  <Container>
+    <Typography variant="h4">SOC Dashboard</Typography>
+    <Typography variant="body1">Real-time Security Alerts | System Health</Typography>
+    <Button variant="contained" color="secondary" style={{ margin: "10px" }}>
+      <Link to="/threat-intelligence" style={{ textDecoration: "none", color: "white" }}>Threat Intelligence</Link>
+    </Button>
+    <Button variant="contained" color="secondary" style={{ margin: "10px" }}>
+      <Link to="/incident-management" style={{ textDecoration: "none", color: "white" }}>Incident Management</Link>
+    </Button>
+  </Container>
+);
+
+const ThreatIntelligence = () => (
+  <Container>
+    <Typography variant="h4">Threat Intelligence</Typography>
+    <Typography variant="body1">Live cyber threat map and advisories.</Typography>
+  </Container>
+);
+
+const IncidentManagement = () => (
+  <Container>
+    <Typography variant="h4">Incident Management</Typography>
+    <Typography variant="body1">Track and manage security incidents.</Typography>
+  </Container>
+);
+
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/threat-intelligence" element={<ThreatIntelligence />} />
+      <Route path="/incident-management" element={<IncidentManagement />} />
+    </Routes>
+  </Router>
+);
+
+export default App;

@@ -7,8 +7,8 @@ const LoginPage = () => (
     <Card>
       <CardContent>
         <Typography variant="h5">SOC Control Center Login</Typography>
-        <TextField fullWidth margin="normal" label="Username" variant="outlined" />
-        <TextField fullWidth margin="normal" label="Password" type="password" variant="outlined" />
+        <TextField fullWidth margin="normal" label="admin" variant="outlined" />
+        <TextField fullWidth margin="normal" label="admin" type="password" variant="outlined" />
         <Button fullWidth variant="contained" color="primary" style={{ marginTop: "10px" }}>Login</Button>
         <Typography variant="body2" style={{ marginTop: "10px" }}>
           <Link to="/dashboard">Go to Dashboard</Link>
